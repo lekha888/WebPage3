@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purposefuel - Healthy Snacks</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-straight/css/uicons-solid-straight.css'>
+</head>
+<body>
+    <div class="announcement-bar">
+        <div class="announcement-bar-content">
+            Orders Over $80 Get Ship Free.
+            ★Orders Over $80 Get Ship Free.
+            ★Orders Over $80 Get Ship Free.
+        </div>
+    </div>
+
+    <nav>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#shop">Shop</a>
+            <a href="#about">About</a>
+        </div>
+        <div class="hamburger-menu">
+            <span class="hamburger-icon">☰</span>
+            <div class="dropdown-menu">
+                <a href="#home">Home</a>
+                <a href="#shop">Shop</a>
+                <a href="#about">About</a>
+            </div>
+        </div>
+        <div class="logo">
+            <img src="logo.png" alt="Purposefuel Logo" />
+        </div>
+        <div class="nav-icons">
+            <span>🔍</span>
+            <span>🛒</span>
+            <span>👤</span>
+        </div>
+    </nav>    
+    
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>DESSERT SNACKS<br>WITH FUNCTIONALITY</h1>
+            <p>A Revolutionary Superfood Snack Bite Inspired by Global Cultures and Packed with Nostalgia</p>
+            <button class="shop-now-btn">SHOP NOW</button>
+        </div>
+        <div class="hero-image">
+            <img src="ProductDisplay.png" alt="Product Display" />
+        </div>
+    </section>
+
+    <div class="features">
+        <div class="feature">
+            <i class="fi fi-ss-badge-check"></i>
+            <p>100% Plant-based</p>
+        </div>
+        <div class="feature">
+            <i class="fi fi-ss-badge-check"></i>
+            <p>Real Fruits, Nuts, & Superfoods</p>
+        </div>
+        <div class="feature">
+            <i class="fi fi-ss-badge-check"></i>
+            <p>No Preservatives or Added Sugar</p>
+        </div>
+    </div>
+
+    <section class="products">
+        <h2>Enjoy Our Purposefuel</h2>
+        <div class="product-grid">
+            <div class="product-card" style="background: #ffeded;">
+                <img src="chocolate.webp" alt="Chocolate Raspberry" />
+                <h3>Chocolate Raspberry Cacao 3pk</h3>
+                <p>Quantity:</p>
+                <div class="quantity-selector">
+                    <button class="quantity-btn">-</button>
+                    <span>1</span>
+                    <button class="quantity-btn">+</button>
+                </div>
+            </div>
+            <div class="product-card" style="background: #edfff0;">
+                <img src="lemon.webp" alt="Matcha Lemon" />
+                <h3>Matcha Lemon 3pk</h3>
+                <p>Quantity:</p>
+                <div class="quantity-selector">
+                    <button class="quantity-btn">-</button>
+                    <span>1</span>
+                    <button class="quantity-btn">+</button>
+                </div>
+            </div>
+            <div class="product-card" style="background: #fff5ed;">
+                <img src="mango.webp" alt="Mango Turmeric" />
+                <h3>Mango Turmeric 3pk</h3>
+                <p>Quantity:</p>
+                <div class="quantity-selector">
+                    <button class="quantity-btn">-</button>
+                    <span>1</span>
+                    <button class="quantity-btn">+</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Quantity selector functionality
+        document.querySelectorAll('.quantity-selector').forEach(selector => {
+            const decreaseBtn = selector.querySelector('button:first-child');
+            const increaseBtn = selector.querySelector('button:last-child');
+            const quantitySpan = selector.querySelector('span');
+
+            decreaseBtn.addEventListener('click', () => {
+                let quantity = parseInt(quantitySpan.textContent);
+                if (quantity > 1) {
+                    quantitySpan.textContent = quantity - 1;
+                }
+            });
+
+            increaseBtn.addEventListener('click', () => {
+                let quantity = parseInt(quantitySpan.textContent);
+                quantitySpan.textContent = quantity + 1;
+            });
+        });
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    document.querySelector('.hamburger-icon').addEventListener('click', () => {
+        const menu = document.querySelector('.hamburger-menu');
+        menu.classList.toggle('active');
+    });
+
+    </script>
+</body>
+</html>
